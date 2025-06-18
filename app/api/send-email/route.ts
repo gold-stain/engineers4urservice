@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
         // Send email via SMTP
         const smtpResult = await transporter.sendMail({
           from: '"ENGINEERS4URSERVICE" <support@engineers4urservice.co.za>',
-          to: "info@engineers4urservice.co.za",
+          to: "support@engineers4urservice.co.za",
           subject: `New Contact Form Submission from ${name}`,
           html: generateEmailHTML(name, email, message),
           text: generateEmailText(name, email, message),
