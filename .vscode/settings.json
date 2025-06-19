@@ -1,0 +1,5 @@
+{
+  "terminal.integrated.env.windows": {
+    "PATH": "C:\\Users\\219781660\\Videos\\node-v20.14.0-win-x64;${env:PATH}"
+  }
+}
