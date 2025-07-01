@@ -81,16 +81,21 @@ export default function Carousel({ slides, autoPlay = true, autoPlayInterval = 5
         ))}
       </div>
 
-      {/* Navigation Arrows */}
-      <button onClick={prevSlide} className="carousel-arrow prev group" aria-label="Previous slide">
-        <ChevronLeft
-          className="h-6 w-6 text-gray-700 group-hover:text-blue-600 transition-colors animate-arrow"
-          style={{ animationDirection: "reverse" }}
-        />
+      {/* Navigation Arrows - Hidden on mobile and tablet */}
+      <button
+        onClick={prevSlide}
+        className="absolute top-1/2 -translate-y-1/2 left-4 z-10 w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:backdrop-blur-md rounded-full transition-all duration-300 hover:scale-110 hidden lg:flex items-center justify-center"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="h-6 w-6 text-white/80" />
       </button>
 
-      <button onClick={nextSlide} className="carousel-arrow next group" aria-label="Next slide">
-        <ChevronRight className="h-6 w-6 text-gray-700 group-hover:text-blue-600 transition-colors animate-arrow" />
+      <button
+        onClick={nextSlide}
+        className="absolute top-1/2 -translate-y-1/2 right-4 z-10 w-12 h-12 bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:backdrop-blur-md rounded-full transition-all duration-300 hover:scale-110 hidden lg:flex items-center justify-center"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="h-6 w-6 text-white/80" />
       </button>
 
       {/* Dots Indicator */}
