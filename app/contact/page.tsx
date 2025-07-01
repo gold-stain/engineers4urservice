@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, MapPin, Linkedin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react"
+import { Mail, MapPin, Linkedin, Clock, Send, CheckCircle, AlertCircle, Loader2, Phone } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export default function ContactPage() {
@@ -223,6 +223,15 @@ export default function ContactPage() {
                       className="text-blue-600 hover:text-blue-800 transition-colors"
                     >
                       info@engineers4urservice.co.za
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Phone className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Phone</h3>
+                    <a href="tel:+27646171074" className="text-blue-600 hover:text-blue-800 transition-colors">
+                      064 617 1074
                     </a>
                   </div>
                 </div>
