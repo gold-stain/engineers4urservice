@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, MapPin, Linkedin, Wrench } from "lucide-react"
+import { Mail, MapPin, Linkedin, Wrench, Phone } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -20,6 +20,10 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-red-500" />
                 <span className="text-sm">info@engineers4urservice.co.za</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-red-500" />
+                <span className="text-sm">064 617 1074</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-red-500" />
