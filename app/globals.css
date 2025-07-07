@@ -255,7 +255,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.3); /* Changed from 0.9 to 0.3 for more transparency */
+  background: rgba(255, 255, 255, 0.15); /* Made even more transparent */
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -266,14 +266,14 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Reduced shadow opacity */
-  backdrop-filter: blur(5px); /* Added subtle blur effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Reduced shadow */
+  backdrop-filter: blur(3px); /* Reduced blur */
 }
 
 .carousel-arrow:hover {
-  background: rgba(255, 255, 255, 0.5); /* Changed from white to semi-transparent on hover */
+  background: rgba(255, 255, 255, 0.25); /* More transparent on hover */
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-arrow.prev {
@@ -289,25 +289,25 @@ body {
   .carousel-arrow {
     width: 40px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.4); /* Changed from 0.95 to 0.4 */
-    backdrop-filter: blur(8px);
-    border: 2px solid rgba(220, 38, 38, 0.2); /* Reduced border opacity */
+    background: rgba(255, 255, 255, 0.2); /* More transparent on mobile */
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(220, 38, 38, 0.1); /* Very subtle border */
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .carousel-arrow.prev {
     left: 10px;
-    top: 20%;
   }
 
   .carousel-arrow.next {
     right: 10px;
-    top: 20%;
   }
 
   .carousel-arrow:hover {
-    background: rgba(255, 255, 255, 0.6); /* Changed from 1 to 0.6 */
-    transform: translateY(0) scale(1.05);
-    border-color: rgba(220, 38, 38, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+    border-color: rgba(220, 38, 38, 0.2);
   }
 }
 
@@ -316,16 +316,17 @@ body {
   .carousel-arrow {
     width: 36px;
     height: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15); /* Even more transparent on small screens */
   }
 
   .carousel-arrow.prev {
     left: 8px;
-    top: 15%;
   }
 
   .carousel-arrow.next {
     right: 8px;
-    top: 15%;
   }
 }
 
