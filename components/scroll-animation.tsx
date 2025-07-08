@@ -2,47 +2,25 @@
 
 import type React from "react"
 
-import { useEffect, useRef, useState } from "react"
+import { ChevronDown } from "lucide-react"
 
-interface ScrollAnimationProps {
-  children: React.ReactNode
+interface ScrollToSectionProps {
+  targetId: string
   className?: string
-  delay?: number
+  children?: React.ReactNode
 }
 
-export default function ScrollAnimation({ children, className = "", delay = 0 }: ScrollAnimationProps) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            setIsVisible(true)
-          }, delay)
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      },
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
+export default function ScrollToSection({ targetId, className = "", children }: ScrollToSectionProps) {
+  const scrollToSection = () => {
+    const section = document.querySelector(`#${targetId}`)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
     }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-      }
-    }
-  }, [delay])
+  }
 
   return (
-    <div ref={ref} className={`scroll-animate ${isVisible ? "animate" : ""} ${className}`}>
-      {children}
-    </div>
+    <button onClick={scrollToSection} className={className} aria-label={`Scroll to ${targetId} section`}>
+      {children || <ChevronDown className="h-6 w-6 text-white" />}
+    </button>
   )
 }
