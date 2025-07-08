@@ -14,11 +14,11 @@ import {
   Target,
   CheckCircle,
   ExternalLink,
+  ChevronDown,
 } from "lucide-react"
 import Carousel from "@/components/carousel"
 import ScrollAnimation from "@/components/scroll-animation"
 import AnimatedCounter from "@/components/animated-counter"
-import ScrollToSection from "@/components/scroll-to-section"
 
 export default function HomePage() {
   const carouselSlides = [
@@ -64,10 +64,9 @@ export default function HomePage() {
 
         {/* Floating CTA - Now points down and scrolls to next section */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
-          <ScrollToSection
-            targetId="partnership-section"
-            className="glass-effect rounded-full p-4 animate-bounce-slow hover:scale-110 transition-transform duration-300 cursor-pointer"
-          />
+          <div className="glass-effect rounded-full p-4 animate-bounce-slow hover:scale-110 transition-transform duration-300 cursor-pointer">
+            <ChevronDown className="h-6 w-6 text-white" />
+          </div>
         </div>
       </section>
 
