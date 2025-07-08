@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -16,11 +14,11 @@ import {
   Target,
   CheckCircle,
   ExternalLink,
-  ChevronDown,
 } from "lucide-react"
 import Carousel from "@/components/carousel"
 import ScrollAnimation from "@/components/scroll-animation"
 import AnimatedCounter from "@/components/animated-counter"
+import ScrollToSection from "@/components/scroll-to-section"
 
 export default function HomePage() {
   const carouselSlides = [
@@ -58,13 +56,6 @@ export default function HomePage() {
     },
   ]
 
-  const scrollToNextSection = () => {
-    const nextSection = document.querySelector("#partnership-section")
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-
   return (
     <div>
       {/* Hero Carousel Section */}
@@ -73,13 +64,10 @@ export default function HomePage() {
 
         {/* Floating CTA - Now points down and scrolls to next section */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
-          <button
-            onClick={scrollToNextSection}
+          <ScrollToSection
+            targetId="partnership-section"
             className="glass-effect rounded-full p-4 animate-bounce-slow hover:scale-110 transition-transform duration-300 cursor-pointer"
-            aria-label="Scroll to next section"
-          >
-            <ChevronDown className="h-6 w-6 text-white" />
-          </button>
+          />
         </div>
       </section>
 
